@@ -13,47 +13,48 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./css/style.css">
 </head>
+
 <body>
     <div class="main-container">
         <header>
             <img src="./images/logo/Booki.png" alt="Logo du site Booki">
             <nav><ul class="lien-nav">                              
-                    <li><a id="herbergements" href="#hebergements">Hébergements</a></li>
-                    <li><a id="activites" href="#activites">Activités</a></li>
+                    <li><a href="#hebergements">Hébergements</a></li>
+                    <li><a href="#activites">Activités</a></li>
                 </ul>               
             </nav> 
         </header>
-        <section class="menu-info">   
-            <div>
-                <h1>Trouvez votre hébergement pour des vacances de rêve</h1>
-                <p>En plein centre-ville ou en pleine nature</p>
-            </div>
-            <form class="search-bar" action="#" method="get">
-                <div class="search-icon">
-                    <i class="fa-solid fa-location-dot"></i>
-                </div>
-                <input type="text" name="ville" placeholder="Marseille, France">
-                <button type="submit">Rechercher</button>
-            </form>
-            <div class="filter-bar">
-                <span>Filtres</span>
-                <ul class="filter">
-                    <li><button><i class="fa-solid fa-money-bill-wave"></i> Économique</button></li>
-                    <li><button><i class="fa-solid fa-user-friends"></i> Familial</button></li>
-                    <li><button><i class="fa-solid fa-heart"></i> Romantique</button></li>
-                    <li><button><i class="fa-solid fa-gem"></i> Nos pépites</button></li>
-                </ul>
-            </div>
-            <p>
-                <i class="fa-solid fa-info icon-info"></i>
-                Plus de 500 logements sont disponibles dans cette ville
-            </p>
-        </section>
         <main>
+            <section class="menu-info">   
+                <div>
+                    <h1>Trouvez votre hébergement pour des vacances de rêve</h1>
+                    <p>En plein centre-ville ou en pleine nature</p>
+                </div>
+                <form class="search-bar" action="#" method="get">
+                    <div class="search-icon">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </div>
+                    <input type="text" name="ville" placeholder="Marseille, France">
+                    <button type="submit">Rechercher</button>
+                </form>
+                <div class="filter-bar">
+                    <span>Filtres</span>
+                    <ul class="filter">
+                        <li><button><i class="fa-solid fa-money-bill-wave"></i>Économique</button></li>
+                        <li><button><i class="fa-solid fa-user-friends"></i>Familial</button></li>
+                        <li><button><i class="fa-solid fa-heart"></i>Romantique</button></li>
+                        <li><button><i class="fa-solid fa-fire"></i>Nos pépites</button></li>
+                    </ul>
+                </div>
+                <p>
+                    <i class="fa-solid fa-info icon-info"></i>
+                    Plus de 500 logements sont disponibles dans cette ville
+                </p>
+            </section>
             <div class="hebergements-and-populaires">
-                <section id="hebergements" class="hebergements">
+                <section id="hebergements" class="hebergements">       
                     <div class="herbergements-title">
-                        <h2 class="section-title">Herbergements a Marseille</h2>
+                        <h2 class="section-title">Hébergements à Marseille</h2>
                     </div>
                     <div class="hebergements-cards">
                         <a href="#">
@@ -99,7 +100,7 @@
                                 <img src="./images/hebergements/reisetopia.jpg" alt="Image de la chambre d'hôtel montrant un lit et une armoire">
                                 <div class="card-content">
                                     <div class="card-txt">
-                                        <h3 class="card-title">Hôtel les mouettes</h3>
+                                        <h3 class="card-title">Hôtel Les mouettes</h3>
                                         <p class="card-subtitle">Nuit à partir de 76<span class="euro">€</span></p>
                                     </div>
                                     <div class="card-rating">
@@ -170,9 +171,10 @@
                                 </div>
                             </article>
                         </a>
-                        <span>
+                        <span class="show-more">
                             <a href="#">Afficher plus</a>
                         </span>
+                    </div>    
                 </section>
                 <section class="populaires">
                     <div class="populaires-title">
@@ -239,16 +241,16 @@
                         </a>
                     </div>
                 </section>
-            </div>
-            <section id="activites" class="section-activity">         
-                <h2>Activités a Marseille</h2> 
-                <div class="activity">                  
+            </div>                   
+            <section id="activites" class="section-activites">         
+                <h2 class="section-title">Activités à Marseille</h2> 
+                <div class="activites">                  
                     <a href="#">
                         <article class="card">
                             <img src="./images/activites/reno-laithienne.jpg" alt="Image des bateaux dans un port">
                                 <div class="card-content">
                                     <div class="card-txt">
-                                        <h3 class="card-title">Vieux-port</h3>
+                                        <h3 class="card-title">Vieux-Port</h3>
                                     </div>
                                 </div>
                         </article>
@@ -258,7 +260,7 @@
                             <img src="./images/activites/paul-hermann.jpg" alt="Image du Fort de Pomegues surplombant une coline rocheuse">
                                 <div class="card-content">
                                     <div class="card-txt">
-                                        <h3 class="card-title">Fort de Pomegues</h3>
+                                        <h3 class="card-title">Fort de Pomègues</h3>
                                     </div>
                                 </div>
                         </article>
@@ -284,33 +286,33 @@
                         </article>
                     </a>
                 </div>
-            </section>
+            </section>    
         </main>
         <footer class="footer">
-            <div class="footer-col">
-                <h3>À propos</h3>
+            <div class="footer-list">
+                <p class="footer-title">À propos</p>
                 <ul>
                     <li><a href="#">Fonctionnement du site</a></li>
                     <li><a href="#">Conditions générales</a></li>
                     <li><a href="#">Données et confidentialité</a></li>
                 </ul>
             </div>
-            <div class="footer-col">
-                <h3>Nos hébergements</h3>
+            <div class="footer-list">
+                <p class="footer-title">Nos hébergements</p>
                 <ul>
                     <li><a href="#">Charte qualité</a></li>
                     <li><a href="#">Proposer votre hôtel</a></li>
                 </ul>
             </div>
-            <div class="footer-col">
-                <h3>Assistance</h3>
+            <div class="footer-list">
+                <p class="footer-title">Assistance</p>
                 <ul>
                     <li><a href="#">Centre d’aide</a></li>
                     <li><a href="#">Nous contacter</a></li>
                 </ul>
             </div>
-        </footer>    
-    </div>
+        </footer>
+    </div>       
 </body>
 
 </html>
