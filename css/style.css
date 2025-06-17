@@ -45,6 +45,7 @@ a {
     background-color: white;
     border-radius: 20px;
     padding: 5px;
+    box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.1);
 }
 
 .card img {
@@ -122,7 +123,7 @@ nav {
     align-items: center;
     border-radius: 15px;
     overflow: hidden;
-    height: 50px;
+    height: 49px;
     width: fit-content;
     background-color: white;
     border: 1px solid #F2F2F2;
@@ -172,8 +173,6 @@ nav {
 
 
 /****** Filters **********/
-
-
 
 .menu-info h1 {
     margin-top: 0;
@@ -410,7 +409,6 @@ nav {
     width: 100%;
     height: 439px;
     border-radius: 20px;
-    box-shadow: 0px 3px 15px 0px #0000001A;
     padding: 0%;
 }
 
@@ -546,7 +544,6 @@ nav {
         width: 100%;
         height: 270px;
         border-radius: 20px;
-        box-shadow: 0px 3px 15px 0px #0000001A;
         padding: 0%;
     }
 
@@ -613,6 +610,7 @@ body {
     width: 100%;
     height: auto;
     padding: 0;
+    gap: 0;
 }
 
 header {
@@ -632,6 +630,7 @@ header img {
     gap: 10px;
 }
 
+
 nav {
     justify-content: center;
     width: 100%;
@@ -640,91 +639,144 @@ nav {
     margin-right: 0;
     padding-left: 0;
     padding-right: 0;
-    gap: 15px;
+    margin-bottom: 30px;
 }
 
 .lien-nav {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-around; 
     list-style: none;
     width: 100%;
     margin: 0;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0;
+    padding: 0;
+    border-bottom: 2px solid var(--main-bg-color);
+    gap: 0px;
 }
 
 .lien-nav li {
     width: 50%;
     text-align: center;
-    padding-bottom: 15px;
-    border-bottom: 2px solid transparent;
     box-sizing: border-box;
     display: flex;
     justify-content: center;
-    align-items: flex-end;
+    align-items: flex-start;
     height: 35px;
-
+    position: relative;
 }
 
-.lien-nav li:hover {
-    border-bottom: 2px solid var(--main-color);
-    color: var(--main-color);
-    border-top: none;
-    padding-top: 0;
-    cursor: pointer;
+.lien-nav li::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;  
+    left: 50%; 
+    transform: translateX(-50%);
+    width: 0; 
+    height: 2px;
+    background-color: var(--main-color);
 }
 
-.lien-nav a:hover {
-    border-top: none;
-    padding-top: initial;
-    border-bottom: none;
-    color: inherit;
+.lien-nav li:hover::after {
+    width: 100%;
 }
+
+.lien-nav li:hover a {
+        color: var(--main-color);
+        border-top: none;
+        padding-top: initial; 
+    }
+
+
+/* Menu-info */
 
 .menu-info {
     display: flex;
     flex-direction: column;
     width: 100%;
     height: auto;
-    padding-right: 20px;
+    gap: 35px; 
     padding-left: 20px;
-    gap: 35px;
+    padding-right: 20px;
+    box-sizing: border-box;
+    margin-bottom: 35px;
+}
+
+.intro-text {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.intro-text h1 {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 100%;
+    letter-spacing: 0;
+    margin: 0; 
+}
+
+.intro-text p {
+    margin: 0; 
 }
 
 .search-bar {
+    display: flex;
     align-items: center;
+    min-width: 355px;
     border-radius: 15px;
     overflow: hidden;
-    max-width: 335px;
-    height: 50px;
+    width: 100%;
+    height: 49px;
     background-color: white;
-    box-shadow: 0 0 0 1px #ccc;
+    border: 1px solid #F2F2F2;
+    box-sizing: border-box;
 }
 
 .search-icon {
     background-color: #F2F2F2;
     padding: 0 18px;
-    align-items: center;
+    display: flex; 
+    align-items: center; 
     height: 100%;
+    border-radius: 15px 0 0 15px;
+    box-sizing: border-box;
 }
 
-.search-icon i {
-    font-size: 16px;
-    color: black;
-}
+.search-bar button i { 
+        font-size: 16px; 
+        color: white; 
+    }
 
 .search-bar input[type="text"] {
-    border: none;
+    border: none; 
     padding: 0 15px;
     font-size: 16px;
     height: 100%;
-    width: 180px;
+    width: auto; 
+    flex-grow: 1; 
     font-weight: bold;
+    box-sizing: border-box;
 }
 
-.search-bar button .fa-solid {
-    font-size: 16px;
+.search-bar button {
+    background-color: var(--main-color);
     color: white;
-    display: block;
+    border: none;
+    height: 100%;
+    width: 49px; 
+    font-size: 0;
+    cursor: pointer;
+    border-radius: 15px 15px 15px 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    box-sizing: border-box; 
 }
 
 .search-bar input:focus {
@@ -735,22 +787,6 @@ nav {
     color: #000000;
 }
 
-.search-bar button {
-    background-color: var(--main-color);
-    color: white;
-    border: none;
-    padding: 0 20px;
-    height: 100%;
-    font-size: 0;
-    padding: 0 15px;
-    cursor: pointer;
-    border-radius: 0 15px 15px 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-}
-
 .filter-bar {
     align-items: flex-start;
     width: 100%;
@@ -759,18 +795,19 @@ nav {
 }
 
 .filter {
-    flex-wrap: wrap;
+    display:grid;
+    grid-template-columns: repeat(2,162.5px);
+    gap: 10px;
+    justify-content: center;
+    width: 100%;
     list-style: none;
     margin: 0;
     padding: 0;
+    gap: 10px;
 }
 
 .filter li {
-    margin-right: 15px;
-}
-
-.filter li:last-child {
-    margin-right: 0;
+    margin: 0;
 }
 
 .filter li button {
@@ -788,10 +825,26 @@ nav {
     cursor: pointer;
 }
 
+.info-message-line {
+    display: flex;
+    align-items: baseline; 
+}
+
+.info-message-line .fa-solid { 
+    flex-shrink: 0; 
+    margin-right: 8px; 
+}
+
+
+/******* Hebergements & Populaires *************/
+
 .hebergements-and-populaires {
     flex-direction: column-reverse;
     width: 100%;
     height: auto;
+    margin-bottom: 0;
+    gap: 15px;
+    margin-bottom: 35px;
 }
 
 .hebergements-and-populaires .populaires {
@@ -800,8 +853,11 @@ nav {
     width: 100%;
     height: auto;
     border-radius: 0;
-    padding: 30px 20px 30px 20px;
     gap: 15px;
+    margin-bottom: 0;
+    padding: 20px;
+    padding-bottom: 30px;
+    padding-top: 30px;
 }
 
 .populaires-cards {
@@ -809,11 +865,16 @@ nav {
     flex-direction: column;
     width: 100%;
     height: auto;
+    gap: 15px;
 }
 
 .populaires-cards .card {
     width: 100%;
-    margin-top: 33px;
+    margin-top: 0;
+    border-radius: 20px;
+    padding: 0;
+    background-color: white;
+    padding: 5px;
 }
 
 .populaires-cards a {
@@ -847,18 +908,26 @@ nav {
     background-color: transparent;
     flex-direction: column;
     width: 100%;
-    height: 1435.5px;
+    height: auto;
+    margin-bottom: 0;
+    padding: 20px;
+    gap: 15px;
 }
 
 .hebergements-cards {
     display: flex;
     flex-direction: column;
     width: 100%;
+    margin-top: 0;
+    gap: 15px;
 }
 
 .hebergements-cards .cards {
     flex-direction: column;
     width: 100%;
+    border-radius: 20px;
+    background-color: white;
+    padding: 5px;
 }
 
 .hebergement-cards a {
@@ -903,29 +972,42 @@ nav {
     margin-top: 0px;
 }
 
+
+/********* Activites **********/
+
 .section-activites {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    box-sizing: border-box;
     width: 100%;
     height: auto;
     gap: 30px;
-
+    padding: 30px;
+    margin: 0;
+    margin-bottom: 35px;
 }
 
-.activites {
+.section-activites .activites {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    box-sizing: border-box;
     width: 100%;
     height: auto;
+    margin: 0;
     gap: 15px;
+}
+
+.section-activites .section-title {
+    width: 100%;
+    margin: 0;
 }
 
 .section-activites .card {
     width: 100%;
     height: 200px;
     border-radius: 20px;
-    box-shadow: 0px 3px 15px 0px #0000001A;
 }
 
 .activites img {
@@ -934,10 +1016,31 @@ nav {
     border-radius: 20px 20px 0 0;
 }
 
+
+/****** Footer ********/
+
 .footer {
     flex-direction: column;
     width: 100%;
     height: auto;
+    padding: 30px;
+    gap: 50px;
 }
+
+.footer-title {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.footer-list ul {
+    display: flex;          
+    flex-direction: column; 
+    gap: 15px;
+}              
+
+.footer-list ul li + li {
+    margin-top: 0; 
+}
+
 
 }
